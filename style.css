@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Remove a barra de rolagem */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #000000;
+    background-image: url('Img/fundo-trator-rural.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.cabecalho {
+    background-color: #0e830e;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.cabecalho img {
+    width: 100px;
+    height: auto;
+}
+
+.cabecalho h2 {
+    margin: 0;
+}
+
+.produtos-container {
+    display: flex;
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    padding: 20px;
+    gap: 40px; /* Espaçamento entre os cards */
+    flex-wrap: wrap; /* Permite que os cards se movam para a linha abaixo se necessário */
+    max-width: 1200px; /* Define uma largura máxima para o container de produtos */
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+}
+
+.produto {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    width: 100%;
+    max-width: 340px; /* Define uma largura máxima para os produtos */
+    position: relative;
+    height: auto; /* Permite que a altura se ajuste ao conteúdo */
+    display: flex; /* Usado para ajuste do layout interno */
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    justify-content: flex-start; /* Alinha o conteúdo no topo do card */
+}
+
+.produto img {
+    width: 100%; /* Aumenta a largura da imagem para ocupar 100% do card */
+    height: 250px; /* Aumenta a altura da imagem */
+    object-fit: cover; /* Mantém a proporção da imagem e cobre o espaço */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    margin-bottom: 15px; /* Espaço entre a imagem e o texto */
+}
+
+.produto:hover img {
+    transform: scale(1.1);
+}
+
+.produto:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.produto:hover .caixa-produto {
+    position: relative;
+    z-index: 2;
+}
+
+.caixa-produto {
+    display: flex;
+    flex-direction: column; /* Alinha o conteúdo verticalmente dentro da caixa */
+    justify-content: flex-start; /* Alinha o conteúdo no topo da caixa */
+}
+
+.produto h4 {
+    font-size: 22px; /* Ajusta o tamanho da fonte do título */
+    margin-bottom: 10px; /* Ajusta o espaço abaixo do título */
+}
+
+.produto p {
+    font-size: 18px; /* Ajusta o tamanho da fonte do texto */
+    line-height: 1.4; /* Ajusta a altura da linha */
+    margin-bottom: 15px; /* Espaço entre o texto e o botão */
+}
+
+.botao-saiba-mais {
+    display: inline-block;
+    padding: 14px 28px; /* Ajusta o padding do botão */
+    background-color: #0e830e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: auto; /* Empurra o botão para o fundo do card */
+}
+
+.botao-saiba-mais:hover {
+    background-color: #333;
+}
+
+.Semeando {
+    background-color: #ecf0f1;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Semeando h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #000;
+}
+
+.Semeando ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.Semeando li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.patrocinadores {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 700px) {
+    .produtos-container {
+        flex-direction: column; /* Alinha os produtos verticalmente em telas menores */
+        align-items: center; /* Centraliza os produtos */
+        gap: 40px; /* Ajusta o espaçamento entre os produtos em telas pequenas */
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+}
+
+.rodape {
+    color: rgb(65, 63, 63);
+    text-align: left;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 14px;
+    z-index: 1000;
+    background-color: #f4f4f4;
+}
+
+body {
+    margin-bottom: 40px; /* Ajuste o espaço inferior para acomodar o rodapé */
+}
